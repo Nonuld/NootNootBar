@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		447B1DEC23678E5D00587E3A /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 447B1DEB23678E5D00587E3A /* quotes.json */; };
+		447B1DEF23678E9D00587E3A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B1DEE23678E9D00587E3A /* Quote.swift */; };
+		447B1DF323678F8B00587E3A /* QuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B1DF223678F8B00587E3A /* QuoteManager.swift */; };
+		447B1DF6236795AE00587E3A /* noot.gif in Resources */ = {isa = PBXBuildFile; fileRef = 447B1DF5236795AE00587E3A /* noot.gif */; };
+		447B1DF9236795F100587E3A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B1DF8236795F100587E3A /* MainController.swift */; };
 		449F396A2317247B008A0DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F39692317247B008A0DBD /* AppDelegate.swift */; };
 		449F396C2317247C008A0DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449F396B2317247C008A0DBD /* Assets.xcassets */; };
 		449F397C23172ADC008A0DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449F397B23172ADC008A0DBD /* Main.storyboard */; };
@@ -35,6 +40,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		447B1DEB23678E5D00587E3A /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		447B1DEE23678E9D00587E3A /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		447B1DF223678F8B00587E3A /* QuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteManager.swift; sourceTree = "<group>"; };
+		447B1DF5236795AE00587E3A /* noot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = noot.gif; sourceTree = "<group>"; };
+		447B1DF8236795F100587E3A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		449F39662317247B008A0DBD /* NootNootBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NootNootBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449F39692317247B008A0DBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449F396B2317247C008A0DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +73,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		447B1DED23678E8F00587E3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				447B1DEE23678E9D00587E3A /* Quote.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		447B1DF123678F7D00587E3A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				447B1DF223678F8B00587E3A /* QuoteManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		447B1DF4236795A400587E3A /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				447B1DF5236795AE00587E3A /* noot.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		447B1DF7236795C100587E3A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				449F397B23172ADC008A0DBD /* Main.storyboard */,
+				447B1DF8236795F100587E3A /* MainController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		449F395D2317247B008A0DBD = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +126,9 @@
 		449F39682317247B008A0DBD /* NootNootBar */ = {
 			isa = PBXGroup;
 			children = (
+				447B1DF7236795C100587E3A /* Controller */,
+				447B1DF123678F7D00587E3A /* Manager */,
+				447B1DED23678E8F00587E3A /* Model */,
 				449F39712317247C008A0DBD /* NootNootBar.entitlements */,
 				449F39842317304B008A0DBD /* ActionsHandler.swift */,
 				449F39692317247B008A0DBD /* AppDelegate.swift */,
@@ -90,17 +136,8 @@
 				449F398C23173610008A0DBD /* NootNootManager.swift */,
 				449F398123173003008A0DBD /* Preferences */,
 				449F397F23172AE2008A0DBD /* Resources */,
-				449F397A23172ADC008A0DBD /* Useless */,
 			);
 			path = NootNootBar;
-			sourceTree = "<group>";
-		};
-		449F397A23172ADC008A0DBD /* Useless */ = {
-			isa = PBXGroup;
-			children = (
-				449F397B23172ADC008A0DBD /* Main.storyboard */,
-			);
-			path = Useless;
 			sourceTree = "<group>";
 		};
 		449F397F23172AE2008A0DBD /* Resources */ = {
@@ -117,7 +154,9 @@
 		449F398023172AEE008A0DBD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				447B1DF4236795A400587E3A /* Gif */,
 				449F396B2317247C008A0DBD /* Assets.xcassets */,
+				447B1DEB23678E5D00587E3A /* quotes.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -208,8 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				449F396C2317247C008A0DBD /* Assets.xcassets in Resources */,
+				447B1DEC23678E5D00587E3A /* quotes.json in Resources */,
 				449F3999231739E8008A0DBD /* noot.mp3 in Resources */,
 				449F39932317375C008A0DBD /* Localizable.strings in Resources */,
+				447B1DF6236795AE00587E3A /* noot.gif in Resources */,
 				449F397C23172ADC008A0DBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,10 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447B1DF9236795F100587E3A /* MainController.swift in Sources */,
 				449F397E23172AE1008A0DBD /* NootNootBar.swift in Sources */,
 				449F396A2317247B008A0DBD /* AppDelegate.swift in Sources */,
 				449F398D23173610008A0DBD /* NootNootManager.swift in Sources */,
+				447B1DF323678F8B00587E3A /* QuoteManager.swift in Sources */,
 				449F39852317304B008A0DBD /* ActionsHandler.swift in Sources */,
+				447B1DEF23678E9D00587E3A /* Quote.swift in Sources */,
 				449F398323173003008A0DBD /* Preferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

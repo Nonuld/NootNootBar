@@ -12,12 +12,35 @@ import LaunchAtLogin
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    private var nootNootBar: NootNootBar!
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+
+    // https://www.youtube.com/watch?v=ii89L7LVAs4
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.nootNootBar = NootNootBar()
+        if let button = self.statusItem.button {
+            button.image = NSImage(named:"BarIcon")
+            button.imageScaling = .scaleProportionallyDown
+            button.target = self
+            button.action = #selector(showController)
+        }
 
         LaunchAtLogin.isEnabled = Preferences.shared.launchAtLogin
+    }
+
+    @objc private func showController() {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateController(withIdentifier: "MainController") as? MainController else {
+            fatalError("Unable to find MainController in the storyboard.")
+        }
+
+        guard let button = statusItem.button else {
+            fatalError("Couldn't find status item button.")
+        }
+
+        let popoverView = NSPopover()
+        popoverView.contentViewController = vc
+        popoverView.behavior = .transient
+        popoverView.show(relativeTo: button.bounds, of: button, preferredEdge: .maxY)
     }
 
 }
