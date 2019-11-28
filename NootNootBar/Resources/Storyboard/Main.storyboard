@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6"/>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NootNootBar" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="hNI-qx-ODP">
+            <objects>
+                <viewController storyboardIdentifier="MainController" id="UKh-ye-bPO" customClass="MainController" customModule="NootNootBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="wBh-Ot-TGR">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="227"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DoD-a0-ByM">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="QyP-DI-IcT"/>
+                                    <constraint firstAttribute="height" secondItem="DoD-a0-ByM" secondAttribute="width" multiplier="360:476" id="YNa-re-3fv"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="P0w-7Y-4c6"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="DoD-a0-ByM" firstAttribute="top" secondItem="wBh-Ot-TGR" secondAttribute="top" id="DgF-8e-fA3"/>
+                            <constraint firstAttribute="trailing" secondItem="DoD-a0-ByM" secondAttribute="trailing" id="RXA-mx-G1C"/>
+                            <constraint firstItem="DoD-a0-ByM" firstAttribute="leading" secondItem="wBh-Ot-TGR" secondAttribute="leading" id="fGZ-Fn-Kru"/>
+                            <constraint firstAttribute="bottom" secondItem="DoD-a0-ByM" secondAttribute="bottom" id="z4u-Ka-opB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gifImageView" destination="DoD-a0-ByM" id="X34-z5-pfb"/>
+                    </connections>
+                </viewController>
+                <customObject id="9rx-D2-iUG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="226"/>
+        </scene>
+    </scenes>
+</document>
