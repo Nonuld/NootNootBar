@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6"/>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NootNootBar" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-211" y="-180"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="MIo-eh-qNu">
+            <objects>
+                <viewController storyboardIdentifier="SettingsController" id="aIO-ci-xyZ" customClass="SettingsViewController" customModule="NootNootBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="GQP-k5-Kfj">
+                        <rect key="frame" x="0.0" y="0.0" width="264" height="76"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09C-uc-Vc0">
+                                <rect key="frame" x="14" y="44" width="61" height="18"/>
+                                <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="6xX-4F-EZv">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTouchLaunchAtLogin:" target="aIO-ci-xyZ" id="xKb-wu-Z4j"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="23p-vS-LhM">
+                                <rect key="frame" x="14" y="14" width="61" height="18"/>
+                                <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="n9X-ih-BfR">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTouchRandom:" target="aIO-ci-xyZ" id="ybj-Ck-LP9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="09C-uc-Vc0" firstAttribute="leading" secondItem="GQP-k5-Kfj" secondAttribute="leading" constant="16" id="5an-4Y-Vqx"/>
+                            <constraint firstItem="23p-vS-LhM" firstAttribute="top" secondItem="09C-uc-Vc0" secondAttribute="bottom" constant="16" id="NLl-zh-yYd"/>
+                            <constraint firstAttribute="bottom" secondItem="23p-vS-LhM" secondAttribute="bottom" constant="16" id="kRU-Yh-xqW"/>
+                            <constraint firstItem="23p-vS-LhM" firstAttribute="leading" secondItem="GQP-k5-Kfj" secondAttribute="leading" constant="16" id="sHO-nG-Det"/>
+                            <constraint firstItem="09C-uc-Vc0" firstAttribute="top" secondItem="GQP-k5-Kfj" secondAttribute="top" constant="16" id="xjt-kk-xsS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="launchAtLoginCheckBox" destination="09C-uc-Vc0" id="26M-gn-LQB"/>
+                        <outlet property="randomCheckBox" destination="23p-vS-LhM" id="qbM-6M-RBl"/>
+                    </connections>
+                </viewController>
+                <customObject id="jy5-cl-vqi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="116"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="hNI-qx-ODP">
+            <objects>
+                <viewController storyboardIdentifier="MainController" id="UKh-ye-bPO" customClass="MainController" customModule="NootNootBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="wBh-Ot-TGR">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="257"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="FEg-dn-WSY">
+                                <rect key="frame" x="0.0" y="227" width="300" height="30"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-YK-VcA">
+                                        <rect key="frame" x="8" y="8" width="18" height="14"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="BarIcon" id="XER-rN-XxR"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-CY-j06">
+                                        <rect key="frame" x="32" y="7" width="83" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="NootNootBar" id="7Z8-TV-YaJ">
+                                            <font key="font" size="12" name="LucidaGrande-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="eUb-02-Abd">
+                                        <rect key="frame" x="272" y="0.0" width="20" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="y8c-cT-3AK"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="settings" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="F0c-AH-T1F">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="didTouchSettings:" target="UKh-ye-bPO" id="Zf9-7W-2CZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4vu-6G-35y"/>
+                                    <constraint firstItem="eUb-02-Abd" firstAttribute="top" secondItem="FEg-dn-WSY" secondAttribute="top" id="FZA-mB-oim"/>
+                                    <constraint firstItem="O5c-CY-j06" firstAttribute="leading" secondItem="NoK-YK-VcA" secondAttribute="trailing" constant="8" id="IxS-UX-pJs"/>
+                                    <constraint firstItem="O5c-CY-j06" firstAttribute="centerY" secondItem="FEg-dn-WSY" secondAttribute="centerY" id="W6F-oY-OC8"/>
+                                    <constraint firstItem="NoK-YK-VcA" firstAttribute="centerY" secondItem="FEg-dn-WSY" secondAttribute="centerY" id="Wuc-0V-dTX"/>
+                                    <constraint firstAttribute="bottom" secondItem="eUb-02-Abd" secondAttribute="bottom" id="YVV-pd-tOx"/>
+                                    <constraint firstAttribute="trailing" secondItem="eUb-02-Abd" secondAttribute="trailing" constant="8" id="f60-eQ-0Gd"/>
+                                    <constraint firstItem="NoK-YK-VcA" firstAttribute="leading" secondItem="FEg-dn-WSY" secondAttribute="leading" constant="8" id="rys-yG-ysg"/>
+                                </constraints>
+                            </customView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DoD-a0-ByM">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="QyP-DI-IcT"/>
+                                    <constraint firstAttribute="height" secondItem="DoD-a0-ByM" secondAttribute="width" multiplier="360:476" id="YNa-re-3fv"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="P0w-7Y-4c6"/>
+                            </imageView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="rvu-rR-Xkw">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="227"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="jxS-BB-o3J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTouchGif:" target="UKh-ye-bPO" id="CbK-9R-WDa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="rvu-rR-Xkw" firstAttribute="leading" secondItem="DoD-a0-ByM" secondAttribute="leading" id="AxS-Dr-zZm"/>
+                            <constraint firstItem="FEg-dn-WSY" firstAttribute="top" secondItem="wBh-Ot-TGR" secondAttribute="top" id="CBL-Hu-dam"/>
+                            <constraint firstAttribute="trailing" secondItem="FEg-dn-WSY" secondAttribute="trailing" id="QdO-IL-4Uz"/>
+                            <constraint firstItem="DoD-a0-ByM" firstAttribute="top" secondItem="FEg-dn-WSY" secondAttribute="bottom" id="Qfx-A9-Bwj"/>
+                            <constraint firstAttribute="trailing" secondItem="DoD-a0-ByM" secondAttribute="trailing" id="RXA-mx-G1C"/>
+                            <constraint firstItem="DoD-a0-ByM" firstAttribute="leading" secondItem="wBh-Ot-TGR" secondAttribute="leading" id="fGZ-Fn-Kru"/>
+                            <constraint firstItem="rvu-rR-Xkw" firstAttribute="bottom" secondItem="DoD-a0-ByM" secondAttribute="bottom" id="g1r-TP-Prw"/>
+                            <constraint firstItem="rvu-rR-Xkw" firstAttribute="trailing" secondItem="DoD-a0-ByM" secondAttribute="trailing" id="gbM-ph-1Qb"/>
+                            <constraint firstItem="FEg-dn-WSY" firstAttribute="leading" secondItem="wBh-Ot-TGR" secondAttribute="leading" id="iRB-XD-Bbc"/>
+                            <constraint firstItem="rvu-rR-Xkw" firstAttribute="top" secondItem="DoD-a0-ByM" secondAttribute="top" id="rPo-Gs-fli"/>
+                            <constraint firstAttribute="bottom" secondItem="DoD-a0-ByM" secondAttribute="bottom" id="z4u-Ka-opB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gifImageView" destination="DoD-a0-ByM" id="X34-z5-pfb"/>
+                        <outlet property="settingsButton" destination="eUb-02-Abd" id="mn5-li-A9G"/>
+                    </connections>
+                </viewController>
+                <customObject id="9rx-D2-iUG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BarIcon" width="18" height="14"/>
+        <image name="settings" width="16" height="16"/>
+    </resources>
+</document>

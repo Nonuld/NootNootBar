@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private lazy var preferences = Preferences()
     private lazy var nootNootController = NootNootController()
+    private lazy var touchBarController = TouchBarController.instantiate(with: nootNootController)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = self.statusItem.button {
@@ -24,7 +25,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = #selector(showMainController)
         }
 
-        nootNootController.beginTheRandomizer()
+        touchBarController.configureUI()
+
+        if preferences.randomNootNootEnabled {
+            nootNootController.beginTheRandomizer()
+        }
     }
 
     @objc private func showMainController() {
@@ -32,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             fatalError("Couldn't find status item button.")
         }
 
-        let mainController = MainController.instantiate(with: nootNootController)
+        let mainController = MainController.instantiate(with: nootNootController, and: preferences)
 
         let popoverView = NSPopover()
         popoverView.contentViewController = mainController
