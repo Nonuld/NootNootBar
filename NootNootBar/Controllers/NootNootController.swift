@@ -41,7 +41,6 @@ class NootNootController: NSObject {
 
     func setTimer() {
         let randomTime = Double.random(in: 60..<600)
-        print(randomTime)
         randomizerTimer = Timer.scheduledTimer(withTimeInterval: randomTime, repeats: false, block: { _ in
             self.playNootNoot()
             self.setTimer()
