@@ -43,12 +43,14 @@ class MainController: NSViewController {
     }
 
     private func setupNotifications() {
-        NotificationCenter.default.addObserver(forName: Preferences.didChangeNotification, object: nil, queue: nil) { _ in
-            if self.preferences.randomNootNootEnabled {
-                self.nootNootController.beginTheRandomizer()
-            } else {
-                self.nootNootController.stopTheRandomizer()
-            }
+        NotificationCenter.default.addObserver(self, selector: #selector(preferencesDidChange), name: Preferences.didChangeNotification, object: nil)
+    }
+
+    @objc private func preferencesDidChange() {
+        if self.preferences.randomNootNootEnabled {
+            self.nootNootController.beginTheRandomizer()
+        } else {
+            self.nootNootController.stopTheRandomizer()
         }
     }
 

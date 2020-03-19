@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private lazy var preferences = Preferences()
     private lazy var nootNootController = NootNootController()
     private lazy var touchBarController = TouchBarController.instantiate(with: nootNootController)
+    private weak var popoverView: NSPopover?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = self.statusItem.button {
@@ -37,13 +38,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             fatalError("Couldn't find status item button.")
         }
 
+        guard popoverView == nil else {
+            popoverView?.close()
+            return
+        }
+
         let mainController = MainController.instantiate(with: nootNootController, and: preferences)
 
         let popoverView = NSPopover()
         popoverView.contentViewController = mainController
         popoverView.behavior = .transient
         popoverView.show(relativeTo: button.bounds, of: button, preferredEdge: .maxY)
-        
+        self.popoverView = popoverView
+
         NSApp.activate(ignoringOtherApps: true)
     }
 
