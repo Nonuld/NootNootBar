@@ -12,6 +12,7 @@ class SettingsViewController: NSViewController {
 
     @IBOutlet var launchAtLoginCheckBox: NSButton!
     @IBOutlet var randomCheckBox: NSButton!
+    @IBOutlet var quitButton: NSButton!
 
     private var preferences: Preferences!
 
@@ -33,6 +34,8 @@ class SettingsViewController: NSViewController {
         launchAtLoginCheckBox.title = NSLocalizedString("launchAtLogin", comment: "")
         randomCheckBox.state = preferences.randomNootNootEnabled ? .on : .off
         randomCheckBox.title = NSLocalizedString("random", comment: "")
+
+        quitButton.title = NSLocalizedString("quit", comment: "")
     }
 
     override func viewDidDisappear() {
@@ -46,6 +49,10 @@ class SettingsViewController: NSViewController {
 
     @IBAction func didTouchRandom(_ sender: NSButton) {
         preferences.randomNootNootEnabled = sender.state == .on ? true : false
+    }
+
+    @IBAction func didTouchClose(_ sender: Any) {
+        NSApplication.shared.terminate(nil)
     }
     
 }

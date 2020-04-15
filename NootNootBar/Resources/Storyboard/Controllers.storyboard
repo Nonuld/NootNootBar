@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,12 +25,12 @@
         <scene sceneID="MIo-eh-qNu">
             <objects>
                 <viewController storyboardIdentifier="SettingsController" id="aIO-ci-xyZ" customClass="SettingsViewController" customModule="NootNootBar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="GQP-k5-Kfj">
-                        <rect key="frame" x="0.0" y="0.0" width="264" height="76"/>
+                    <view key="view" misplaced="YES" id="GQP-k5-Kfj">
+                        <rect key="frame" x="0.0" y="0.0" width="264" height="114"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09C-uc-Vc0">
-                                <rect key="frame" x="14" y="44" width="61" height="18"/>
+                                <rect key="frame" x="14" y="82" width="61" height="18"/>
                                 <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="6xX-4F-EZv">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="23p-vS-LhM">
-                                <rect key="frame" x="14" y="14" width="61" height="18"/>
+                                <rect key="frame" x="14" y="52" width="61" height="18"/>
                                 <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="n9X-ih-BfR">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -49,17 +49,30 @@
                                     <action selector="didTouchRandom:" target="aIO-ci-xyZ" id="ybj-Ck-LP9"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-rV-IWc">
+                                <rect key="frame" x="16" y="15" width="125" height="23"/>
+                                <buttonCell key="cell" type="roundTextured" title="Textured Rounded" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DYw-NE-oge">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTouchClose:" target="aIO-ci-xyZ" id="yL3-Pn-Mxe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="09C-uc-Vc0" firstAttribute="leading" secondItem="GQP-k5-Kfj" secondAttribute="leading" constant="16" id="5an-4Y-Vqx"/>
+                            <constraint firstItem="J5i-rV-IWc" firstAttribute="leading" secondItem="GQP-k5-Kfj" secondAttribute="leading" constant="16" id="M41-Da-LVz"/>
                             <constraint firstItem="23p-vS-LhM" firstAttribute="top" secondItem="09C-uc-Vc0" secondAttribute="bottom" constant="16" id="NLl-zh-yYd"/>
-                            <constraint firstAttribute="bottom" secondItem="23p-vS-LhM" secondAttribute="bottom" constant="16" id="kRU-Yh-xqW"/>
+                            <constraint firstItem="J5i-rV-IWc" firstAttribute="top" secondItem="23p-vS-LhM" secondAttribute="bottom" constant="16" id="RqZ-jc-mC2"/>
                             <constraint firstItem="23p-vS-LhM" firstAttribute="leading" secondItem="GQP-k5-Kfj" secondAttribute="leading" constant="16" id="sHO-nG-Det"/>
+                            <constraint firstAttribute="bottom" secondItem="J5i-rV-IWc" secondAttribute="bottom" constant="16" id="tKb-Ym-7us"/>
                             <constraint firstItem="09C-uc-Vc0" firstAttribute="top" secondItem="GQP-k5-Kfj" secondAttribute="top" constant="16" id="xjt-kk-xsS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="launchAtLoginCheckBox" destination="09C-uc-Vc0" id="26M-gn-LQB"/>
+                        <outlet property="quitButton" destination="J5i-rV-IWc" id="FAg-qz-Z3W"/>
                         <outlet property="randomCheckBox" destination="23p-vS-LhM" id="qbM-6M-RBl"/>
                     </connections>
                 </viewController>
@@ -111,7 +124,7 @@
                                     <constraint firstItem="O5c-CY-j06" firstAttribute="centerY" secondItem="FEg-dn-WSY" secondAttribute="centerY" id="W6F-oY-OC8"/>
                                     <constraint firstItem="NoK-YK-VcA" firstAttribute="centerY" secondItem="FEg-dn-WSY" secondAttribute="centerY" id="Wuc-0V-dTX"/>
                                     <constraint firstAttribute="bottom" secondItem="eUb-02-Abd" secondAttribute="bottom" id="YVV-pd-tOx"/>
-                                    <constraint firstAttribute="trailing" secondItem="eUb-02-Abd" secondAttribute="trailing" constant="8" id="f60-eQ-0Gd"/>
+                                    <constraint firstAttribute="trailing" secondItem="eUb-02-Abd" secondAttribute="trailing" constant="8" id="q6t-4z-ejd"/>
                                     <constraint firstItem="NoK-YK-VcA" firstAttribute="leading" secondItem="FEg-dn-WSY" secondAttribute="leading" constant="8" id="rys-yG-ysg"/>
                                 </constraints>
                             </customView>
