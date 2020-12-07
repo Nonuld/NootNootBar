@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./screenshots/AppBanner.png" alt="CRUD icon" width="256" maxHeight="256" />
+    <img src="/screenshots/AppBanner.png" alt="NootNootBar banner" width="400" maxHeight="57" />
 </p>
 
 <p align="center">
@@ -13,13 +13,16 @@
 # NootNootBar
 
 Let you play the call of Pingu whenever you want, from your Mac's Menu Bar or Touch Bar.
+
 From the Menu Bar you can watch Pingu animated and play its sound with a click on it.
+
 From the Touch Bar you can play its sound as many times as you want so easily.
 
 You can also ask it to play the its sound randomly in time, for some suspense.
 
-![MenuBar](./screenshots/MenuBar.png)
-![TouchBar](./screenshots/TouchBar.png)
+![MenuBar](/screenshots/MenuBar.png)
+
+![TouchBar](/screenshots/TouchBar.png)
 
 ## Installing
 
